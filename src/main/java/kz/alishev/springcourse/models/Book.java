@@ -6,7 +6,7 @@ import javax.validation.constraints.NotEmpty;
 @Entity
 @Table(name="Book")
 public class Book {
-
+//New commit
     @ManyToOne
     @JoinColumn(name = "person_id",
             referencedColumnName = "id")
