@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form th:action="@{/books/search}" method="get">
+    <label for="partialName">Введите название:</label>
+    <input type="text" id="partialName" name="partialName" required />
+
+    <button type="submit">Искать</button>
+</form>
+
+<ul>
+    <!-- Итерируем по найденным объектам и отображаем их свойства -->
+    <li th:each="book : ${books}">
+        <p>Название: <span th:text="${book.getName()+', '+book.getAuthor()+', '+book.getReleaseYear()}"></span></p>
+        <!-- Добавьте другие поля по вашему выбору -->
+    </li>
+</ul>
+
+</body>
+</html>
